@@ -1,0 +1,135 @@
+<template>
+  <div class="stu_page">
+    <div class="stu_page_navbar">
+      <el-menu :default-active="1" class="el-menu-demo" mode="horizontal" @select="">
+        <el-menu-item index="1">Processing Center</el-menu-item>
+        <el-sub-menu index="2">
+          <template #title>Workspace</template>
+          <el-menu-item index="2-1">item one</el-menu-item>
+          <el-menu-item index="2-2">item two</el-menu-item>
+          <el-menu-item index="2-3">item three</el-menu-item>
+          <el-sub-menu index="2-4">
+            <template #title>item four</template>
+            <el-menu-item index="2-4-1">item one</el-menu-item>
+            <el-menu-item index="2-4-2">item two</el-menu-item>
+            <el-menu-item index="2-4-3">item three</el-menu-item>
+          </el-sub-menu>
+        </el-sub-menu>
+        <el-menu-item index="3" disabled>Info</el-menu-item>
+        <el-menu-item index="4">Orders</el-menu-item>
+      </el-menu>
+    </div>
+    <div class="stu_page_maincontainer">
+      <el-card class="stu_main_info_card" shadow="hover">
+        <div class="stu_main_info">
+          <div class="stu_main_info_img">
+            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+            <div class="stu_main_info_intro">
+              <h2>幸而</h2>
+              <el-text class="mx-1" type="info">教师</el-text>
+            </div>
+          </div>
+          <div class="stu_page_time">
+            <div class="stu_page_time_box">
+              <p class="stu_page_time_title">活跃天数:</p>
+              <p class="stu_page_time_cont">26天</p>
+            </div>
+            <div >
+              <p class="stu_page_time_title">教学所属:</p>
+              <p class="stu_page_time_cont">提瓦特大学</p>
+            </div>
+          </div>
+          <div class="stu_main_info_others">
+            <el-button>更改个人信息</el-button>
+          </div>
+        </div>
+      </el-card>
+      <el-card class="stu_page_func" style="margin-top: 20px;">
+        <div>
+          <div class="selector">
+            <el-menu default-active="/user/myself" class="el-menu-demo" mode="horizontal" @select=""
+              text-color="	#696969" active-text-color="#00A3DB" router>
+              <el-menu-item index="/teacher/myself" style="font-size: 18px;">我的空间</el-menu-item>
+              <el-menu-item index="/teacher/visteacher" style="font-size: 18px;">智能批改</el-menu-item>
+              <el-menu-item index="/user/teacher/sportscoring" style="font-size: 18px;">体育评分</el-menu-item>
+              <el-menu-item index="/user/test2" style="font-size: 18px;">智能问答</el-menu-item>
+            </el-menu>
+          </div>
+          <router-view></router-view>
+        </div>
+      </el-card>
+    </div>
+  </div>
+  <HomePageFooter></HomePageFooter>
+</template>
+
+<script setup lang='ts'>
+import HomePageFooter from '@/components/HomePageFooter.vue';
+</script>
+
+<style lang="less" scoped>
+.stu_page {
+  min-height: 100vh;
+  background-color: rgb(238, 242, 248);
+
+  .stu_page_maincontainer {
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-left: 25%;
+    min-width: 800px;
+    width: 50%;
+    min-height: 100vh;
+
+    .stu_main_info_card {
+      .stu_main_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .stu_page_time {
+          display: flex;
+          .stu_page_time_box{
+            margin-right: 10px;
+            padding-right: 10px;
+            border-right: 1px solid 	#D3D3D3;
+          }
+          .stu_page_time_title{
+            color: black;
+            font-size: 20px;
+            font-weight: 400;
+          }
+          .stu_page_time_cont{
+            margin-top: 5px;
+            color: 	#A9A9A9;
+          }
+        }
+
+        .stu_main_info_others {}
+
+        .stu_main_info_img {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-left: 10%;
+          width: 30%;
+
+          .stu_main_info_intro {
+            min-height: 70px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+      }
+
+      width: 100%;
+
+      .stu_page_func {
+        margin-top: 30px;
+      }
+    }
+  }
+}
+</style>
