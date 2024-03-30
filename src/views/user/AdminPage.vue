@@ -25,6 +25,9 @@ import AdminAside from '@/components/admin/AdminAside.vue'
 
 <style lang="less" scoped>
 .el-container{
+    .l_container {
+        min-height: 100vh;
+    }
     .r_container {
     flex-wrap: wrap;
     .el-header{

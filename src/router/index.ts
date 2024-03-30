@@ -62,6 +62,11 @@ const router = createRouter({
               component: async () => await import('@/components/admin/AdminUsermanage.vue')
             }
           ]
+        },
+        {
+          path: 'changeinfo',
+          name: 'changeinfo',
+          component: async () => await import('@/views/user/ChangeInfo.vue')
         }
       ]
     },

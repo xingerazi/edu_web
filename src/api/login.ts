@@ -4,9 +4,8 @@ import type {reg_rule_form,log_rule_form} from '../type/login'
 import { useUserStore } from '@/stores';
 
 export const sub_reg_form_servive=(formData:reg_rule_form)=>{
-    let name='';
     formData.flag==1? formData.name='teacher':formData.name='student'
-    http.post('/user/api/register',{
+    return http.post('/user/api/register',{
         ...formData,
     })
 }

@@ -16,21 +16,21 @@ export const useUserStore = defineStore(
   'user',
   () => {
     const token = ref('')
+    const imgCode=ref('')
     const setToken = (newToken: string) => {
       token.value = newToken
-      console.log(token.value);
     }
     const removeToken = () => {
       token.value = ''
     }
-    const user: User = {
+    const user=ref<User>({
       email: '', flag: 1,
       id: 0,
       image: '',
       name: '',
       phone: '',
       sex: 1,
-    }
+    })
     const getUser = async (data: {
       image: string;
       phone: string;
@@ -39,22 +39,23 @@ export const useUserStore = defineStore(
       sex: 0 | 1;
       id: number; name: string;
     }) => {
-      user.name = data.name
-      user.email = data.email
-      user.sex = data.sex
-      user.flag = data.flag
-      user.id = data.id
-      user.phone = data.phone
-      user.image = data.image
+      user.value.name = data.name
+      user.value.email = data.email
+      user.value.sex = data.sex
+      user.value.flag = data.flag
+      user.value.id = data.id
+      user.value.phone = data.phone
+      user.value.image = data.image
     }
     const setUser = () => {
     }
 
     return {
+      imgCode,
       token,
+      user,
       setToken,
       removeToken,
-      user,
       getUser,
       setUser
     }

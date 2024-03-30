@@ -20,12 +20,64 @@
                 </div>
             </el-card>
         </el-col>
-        <el-col  :span="16" style="margin-top: 20px;"></el-col>
+        <el-col  :span="16" style="margin-top: 20px;">
+            <div class="num">
+                <el-card :body-style="{display:'flex' ,padding:0}" v-for="item in countData" :key="item.name">
+                    <component :is="item.icon" class="icons" :style="{background:item.color}"></component>
+                    <div class="details">
+                        <p class="num">${{ item.value }}</p>
+                        <p class="txt">${{ item.name }}</p>
+                    </div>
+                </el-card>
+                <el-card style="height: 280px;">
+                    <div ref="echart" style="height: 280px;"></div>
+                </el-card>
+            </div>
+        </el-col>
     </el-row>
 </template>
 
 <script setup lang='ts'>
+import { ref } from 'vue';
 
+const countData=ref([
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'CircleCheck',
+        color:'#2ec7c9'
+    },
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'Star',
+        color:'#ffb980'
+    },
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'Goods',
+        color:'#5ab1ef'
+    },
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'CircleCheck',
+        color:'#2ec7c9'
+    },
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'Star',
+        color:'#ffb980'
+    },
+    {
+        name:'今日支付订单',
+        value:1234,
+        icon:'Goods',
+        color:'#5ab1ef'
+    },
+])
 </script>
 
 <style lang="less" scoped>
@@ -51,6 +103,38 @@
             span{
                 color: #666;
                 margin-left: 60px;
+            }
+        }
+    }
+    .num{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .el-card{
+            width: 32%;
+            margin-bottom: 20px;
+        }
+        .icons{
+            width: 80px;
+            height: 80px;
+            font-size: 30px;
+            line-height: 80px;
+            text-align: center;
+            color:#fff
+        }
+        .details{
+            margin-left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .num{
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+            .txt{
+                font-size: 14px;
+                text-align: center;
+                color:#999
             }
         }
     }

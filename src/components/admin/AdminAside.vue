@@ -1,8 +1,7 @@
 <template>
-    <div class="">
+    <div>
         <el-menu default-active="/usermanage" class="el-menu-vertical-demo" router background-color="#545c64" text-color="#fff"
             active-text-color="#ffd04b">
-            <h3>书生：万卷</h3>
             <el-menu-item index="/user/admin/main">
                 <el-icon>
                     <location />
@@ -43,11 +42,15 @@
 </script>
 
 <style lang="less" scoped>
-.el-menu{
+.el-menu-vertical-demo{
+    min-height: 100vh;
+    .el-menu{
     h3{
         line-height: 48px;
         color: #fff;
         text-align: center;
     }
 }
+}
+
 </style>

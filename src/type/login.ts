@@ -2,7 +2,7 @@
 export interface reg_rule_form{
     phone:string,
     password:string,
-    repassword:string,
+    repassword?:string,
     name?:string,
     flag:1|2,
     sex:0|1
@@ -15,4 +15,12 @@ export interface log_rule_form{
     password:string,
 }
 
+//更改信息表单
+
+export interface reset_form{
+    phone:string
+    sex?:'男'|'女'|0|1
+    name?:string
+    email?:string
+}
 

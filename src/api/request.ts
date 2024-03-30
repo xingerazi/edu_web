@@ -1,14 +1,21 @@
 import axios from 'axios'
+import { useUserStore } from '@/stores';
+const token=useUserStore().token
 
-const baseURL = 'http://113.54.233.71:8899'
+const baseURL = 'https://47.109.109.72:443'
 
 const http = axios.create({
   baseURL,
   timeout: 8000
 })
 
+
 http.interceptors.request.use(
   (config) => {
+    if(token){
+      config.headers['token']=token
+    }
+    
     return config
   },
   (err) => Promise.reject(err)
@@ -19,7 +26,6 @@ http.interceptors.response.use(
     return res
   },
   (err) => {
-    // TODO 5. 处理401错误
     return Promise.reject(err)
   }
 )

@@ -1,3 +1,19 @@
+<script setup lang='ts'>
+import HomePageFooter from '@/components/HomePageFooter.vue';
+import { useRouter } from 'vue-router';
+import {useUserStore} from '@/stores/index'
+import { onMounted, ref } from 'vue';
+import { getImg } from '@/api/info';
+const router=useRouter()
+const userStore=useUserStore()
+const imgCode=ref('')
+onMounted(async()=>{
+  const res = await getImg()
+  imgCode.value = URL.createObjectURL (res.data) 
+})
+</script>
+
+
 <template>
   <div class="stu_page">
     <div class="stu_page_navbar">
@@ -23,24 +39,25 @@
       <el-card class="stu_main_info_card" shadow="hover">
         <div class="stu_main_info">
           <div class="stu_main_info_img">
-            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" />
+            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" v-if="!Boolean(imgCode)"/>
+            <el-avatar :size="120" :src="imgCode" v-else/>
             <div class="stu_main_info_intro">
-              <h2>幸而</h2>
-              <el-text class="mx-1" type="info">教师</el-text>
+              <h2>{{userStore.user.name}}</h2>
+              <el-text class="mx-1" type="info">{{userStore.user.flag==1?'教师':'学生'}}</el-text>
             </div>
           </div>
           <div class="stu_page_time">
             <div class="stu_page_time_box">
-              <p class="stu_page_time_title">活跃天数:</p>
+              <p class="stu_page_time_title">打卡次数:</p>
               <p class="stu_page_time_cont">26天</p>
             </div>
-            <div >
+            <div>
               <p class="stu_page_time_title">教学所属:</p>
-              <p class="stu_page_time_cont">提瓦特大学</p>
+              <p class="stu_page_time_cont">书生万卷</p>
             </div>
           </div>
           <div class="stu_main_info_others">
-            <el-button>更改个人信息</el-button>
+            <el-button @click="router.push('/user/changeinfo')">更改个人信息</el-button>
           </div>
         </div>
       </el-card>
@@ -62,10 +79,6 @@
   </div>
   <HomePageFooter></HomePageFooter>
 </template>
-
-<script setup lang='ts'>
-import HomePageFooter from '@/components/HomePageFooter.vue';
-</script>
 
 <style lang="less" scoped>
 .stu_page {
@@ -89,8 +102,8 @@ import HomePageFooter from '@/components/HomePageFooter.vue';
         .stu_page_time {
           display: flex;
           .stu_page_time_box{
-            margin-right: 10px;
-            padding-right: 10px;
+            margin-right: 20px;
+            padding-right: 20px;
             border-right: 1px solid 	#D3D3D3;
           }
           .stu_page_time_title{

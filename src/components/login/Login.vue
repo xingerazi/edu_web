@@ -6,6 +6,7 @@ import { ElMessage, type FormRules } from 'element-plus';
 import { judge_identity, sub_log_form_servive } from '@/api/login'
 import { useUserStore } from '@/stores';
 import { ArrowLeft } from '@element-plus/icons-vue'
+import { getImg } from '@/api/info';
 const router = useRouter()
 const userStore = useUserStore()
 //表单校验
@@ -35,12 +36,9 @@ const log_form_rules = reactive<FormRules<log_rule_form>>({
 
 const sub_log_form = async () => {
     await log_form_ref.value.validate()
-    console.log(log_form);
     const test = await sub_log_form_servive(log_form)
     if (test.data.code === 200) {
         ElMessage('登录成功')
-        console.log(test.data.data);
-
         userStore.setToken(test.data.data.token)
         userStore.getUser(test.data.data.user)
         judge_identity()

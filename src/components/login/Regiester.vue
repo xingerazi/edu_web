@@ -2,9 +2,8 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router';
 import type { reg_rule_form } from '@/type/login'
-import type { FormRules } from 'element-plus';
+import { ElMessage, type FormRules } from 'element-plus';
 import { sub_reg_form_servive } from '@/api/login'
-import axios from 'axios';
 const router = useRouter()
 
 //表单校验
@@ -13,7 +12,7 @@ const reg_form = reactive<reg_rule_form>({
     phone: '',
     password: '',
     repassword: '',
-    name: '',
+    name: 'student',
     flag: 1,
     sex: 0,
     email: ''
@@ -63,19 +62,15 @@ const reg_form_rules = reactive<FormRules<reg_rule_form>>({
 
 const sub_reg_form = async () => {
     await reg_form_ref.value.validate()
-    console.log(reg_form);
-    console.log(reg_form.phone);
-    await sub_reg_form_servive(reg_form);
-    // axios.post('/user', {
-    //     firstName: 'Fred',
-    //     lastName: 'Flintstone'
-    // })
-    //     .then(function (response) {
-    //         console.log(response);
-    //     })
-    //     .catch(function (error) {
-    //         console.log(error);
-    //     });
+    const test=await sub_reg_form_servive(reg_form);
+    if (test.data.code === 200) {
+        ElMessage('注册成功')
+        router.push('/login/loginpage')
+    }else if (test.data.code === 1000) {
+        ElMessage.error('该手机号已注册')
+    } else {
+        ElMessage.error('网络繁忙')
+    }
 }
 </script>
 
