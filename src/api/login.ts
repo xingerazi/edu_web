@@ -27,3 +27,9 @@ export const judge_identity=()=>{
         router.push('/user/admin')
     }
 }
+
+
+
+export const exit=()=>{
+    router.push('/')
+}

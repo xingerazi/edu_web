@@ -85,7 +85,7 @@ const sendVerify = async () => {
 
 <template>
     <div class="change_info_page">
-        <el-card style="width: 580px;height: 60%;" shadow="hover" class="card">
+        <el-card style="width: 580px;height: 600px;" shadow="hover" class="card">
             <div class="title">信息修改</div>
             <el-form :model="resetForm" label-width="auto" style="max-width: 400px;margin-left: 80px;">
                 <el-form-item label="用户名">

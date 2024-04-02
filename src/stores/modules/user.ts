@@ -16,14 +16,14 @@ export const useUserStore = defineStore(
   'user',
   () => {
     const token = ref('')
-    const imgCode=ref('')
+    const imgCode = ref('')
     const setToken = (newToken: string) => {
       token.value = newToken
     }
     const removeToken = () => {
       token.value = ''
     }
-    const user=ref<User>({
+    const user = ref<User>({
       email: '', flag: 1,
       id: 0,
       image: '',
@@ -49,6 +49,17 @@ export const useUserStore = defineStore(
     }
     const setUser = () => {
     }
+    const deleteAll = () => {
+      token.value = ''
+      user.value = {
+        email: '', flag: 1,
+        id: 0,
+        image: '',
+        name: '',
+        phone: '',
+        sex: 1,
+      }
+    }
 
     return {
       imgCode,
@@ -57,7 +68,8 @@ export const useUserStore = defineStore(
       setToken,
       removeToken,
       getUser,
-      setUser
+      setUser,
+      deleteAll
     }
   },
   {

@@ -32,7 +32,14 @@ const router = createRouter({
         {
           path: 'student',
           name: 'student',
-          component: async () => await import('@/views/user/StudentPage.vue')
+          component: async () => await import('@/views/user/StudentPage.vue'),
+          children: [
+            {
+              path: 'course',
+              name: 'course',
+              component: async () => await import('@/components/student/CourseList.vue')
+            },
+          ]
         },
         {
           path: 'teacher',
@@ -47,8 +54,14 @@ const router = createRouter({
           ]
         },
         {
+          path: 'chatai',
+          name: 'chatai',
+          component: async () => await import('@/views/user/TeacherPage.vue'),
+        },
+        {
           path: 'admin',
           name: 'admin',
+          redirect: '/user/admin/main',
           component: async () => await import('@/views/user/AdminPage.vue'),
           children: [
             {
@@ -60,6 +73,11 @@ const router = createRouter({
               path: 'usermanage',
               name: 'usermanage',
               component: async () => await import('@/components/admin/AdminUsermanage.vue')
+            },
+            {
+              path: 'coursemanage',
+              name: 'coursemanage',
+              component: async () => await import('@/components/admin/AdminCoursemanage.vue')
             }
           ]
         },

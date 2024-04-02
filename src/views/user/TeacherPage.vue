@@ -1,49 +1,45 @@
 <script setup lang='ts'>
 import HomePageFooter from '@/components/HomePageFooter.vue';
 import { useRouter } from 'vue-router';
-import {useUserStore} from '@/stores/index'
+import { useUserStore } from '@/stores/index'
 import { onMounted, ref } from 'vue';
 import { getImg } from '@/api/info';
-const router=useRouter()
-const userStore=useUserStore()
-const imgCode=ref('')
-onMounted(async()=>{
+const router = useRouter()
+const userStore = useUserStore()
+const imgCode = ref('')
+
+//退出登录
+const exitlogin=()=>{
+  userStore.deleteAll()
+  router.push('/')
+}
+
+onMounted(async () => {
   const res = await getImg()
-  imgCode.value = URL.createObjectURL (res.data) 
+  imgCode.value = URL.createObjectURL(res.data)
 })
 </script>
 
 
 <template>
+  <el-affix :offset="100" style="height: 0;">
+    <el-button style="margin-left: 50px;" @click="exitlogin">退出登录</el-button>
+  </el-affix>
   <div class="stu_page">
     <div class="stu_page_navbar">
-      <el-menu :default-active="1" class="el-menu-demo" mode="horizontal" @select="">
-        <el-menu-item index="1">Processing Center</el-menu-item>
-        <el-sub-menu index="2">
-          <template #title>Workspace</template>
-          <el-menu-item index="2-1">item one</el-menu-item>
-          <el-menu-item index="2-2">item two</el-menu-item>
-          <el-menu-item index="2-3">item three</el-menu-item>
-          <el-sub-menu index="2-4">
-            <template #title>item four</template>
-            <el-menu-item index="2-4-1">item one</el-menu-item>
-            <el-menu-item index="2-4-2">item two</el-menu-item>
-            <el-menu-item index="2-4-3">item three</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
-        <el-menu-item index="3" disabled>Info</el-menu-item>
-        <el-menu-item index="4">Orders</el-menu-item>
+      <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" style="width: 100%;">
       </el-menu>
     </div>
     <div class="stu_page_maincontainer">
       <el-card class="stu_main_info_card" shadow="hover">
         <div class="stu_main_info">
           <div class="stu_main_info_img">
-            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" v-if="!Boolean(imgCode)"/>
-            <el-avatar :size="120" :src="imgCode" v-else/>
+            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+              v-if="!Boolean(imgCode)" />
+            <el-avatar :size="120" :src="imgCode" v-else />
             <div class="stu_main_info_intro">
-              <h2>{{userStore.user.name}}</h2>
-              <el-text class="mx-1" type="info">{{userStore.user.flag==1?'教师':'学生'}}</el-text>
+              <h2>{{ userStore.user.name }}</h2>
+              <el-text class="mx-1" type="info">{{ userStore.user.flag == 1 ? '教师' : '学生' }}</el-text>
             </div>
           </div>
           <div class="stu_page_time">
@@ -69,7 +65,7 @@ onMounted(async()=>{
               <el-menu-item index="/teacher/myself" style="font-size: 18px;">我的空间</el-menu-item>
               <el-menu-item index="/teacher/visteacher" style="font-size: 18px;">智能批改</el-menu-item>
               <el-menu-item index="/user/teacher/sportscoring" style="font-size: 18px;">体育评分</el-menu-item>
-              <el-menu-item index="/user/test2" style="font-size: 18px;">智能问答</el-menu-item>
+              <el-menu-item index="/user/chatai" style="font-size: 18px;">智能问答</el-menu-item>
             </el-menu>
           </div>
           <router-view></router-view>
@@ -77,6 +73,9 @@ onMounted(async()=>{
       </el-card>
     </div>
   </div>
+  <el-affix :offset="120">
+    <el-button type="primary">Offset top 120px</el-button>
+  </el-affix>
   <HomePageFooter></HomePageFooter>
 </template>
 
@@ -101,19 +100,22 @@ onMounted(async()=>{
 
         .stu_page_time {
           display: flex;
-          .stu_page_time_box{
+
+          .stu_page_time_box {
             margin-right: 20px;
             padding-right: 20px;
-            border-right: 1px solid 	#D3D3D3;
+            border-right: 1px solid #D3D3D3;
           }
-          .stu_page_time_title{
+
+          .stu_page_time_title {
             color: black;
             font-size: 20px;
             font-weight: 400;
           }
-          .stu_page_time_cont{
+
+          .stu_page_time_cont {
             margin-top: 5px;
-            color: 	#A9A9A9;
+            color: #A9A9A9;
           }
         }
 
