@@ -3,7 +3,7 @@
         <el-col :span="8" style="margin-top: 20px">
             <el-card shadow="hover">
                 <div class="user">
-                    <img src="../../assets/images/ava_img.png" alt="" />
+                    <img src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" alt="" />
                     <div class="userinfo">
                         <p class="name">Admin</p>
                         <p class="role">超级管理员</p>
@@ -14,9 +14,11 @@
                     <p>上次登录地点: <span>2022-7-11</span></p>
                 </div>
             </el-card>
-            <el-card shadow="hover" style="margin-top: 20px; height: 450px">
+            <el-card shadow="hover" style="margin-top: 20px; height: 660px">
                 <div>
-                    <el-card></el-card>
+                    <el-card :body-style="{padding:0}">
+                        <el-calendar/>
+                    </el-card>
                 </div>
             </el-card>
         </el-col>
@@ -30,7 +32,7 @@
                     </div>
                 </el-card>
             </div>
-            <el-card :body-style="{minHeight:'60vh'}">
+            <el-card :body-style="{minHeight:'60vh',marginTop:'50px'}">
                 <div class="echartsArea">
                     <div id="myChart" style="width: 400px; height: 400px"></div>
                     <div id="chart" style="width: 400px; height: 400px;"></div>
@@ -45,37 +47,37 @@ import { onMounted, reactive, ref } from 'vue'
 import * as echarts from 'echarts'
 const countData = ref([
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'CircleCheck',
         color: '#2ec7c9'
     },
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'Star',
         color: '#ffb980'
     },
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'Goods',
         color: '#5ab1ef'
     },
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'CircleCheck',
         color: '#2ec7c9'
     },
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'Star',
         color: '#ffb980'
     },
     {
-        name: '今日支付订单',
+        name: '课程上新',
         value: 1234,
         icon: 'Goods',
         color: '#5ab1ef'
@@ -84,7 +86,7 @@ const countData = ref([
 const state = reactive({
     option: {
         title: {
-            text: '折线图示例'
+            text: '用户新增比率'
         },
         legend: {
             x: 'center',
@@ -105,28 +107,24 @@ const state = reactive({
                 labelLine: { show: true },
                 data: [
                     {
-                        value: 1956,
-                        name: '非星级'
-                    },
-                    {
                         value: 1866,
-                        name: '一星级'
+                        name: '一年级'
                     },
                     {
                         value: 1725,
-                        name: '二星级'
+                        name: '二年级'
                     },
                     {
                         value: 1535,
-                        name: '三星级'
+                        name: '三年级'
                     },
                     {
                         value: 1505,
-                        name: '四星级'
+                        name: '四年级'
                     },
                     {
                         value: 1414,
-                        name: '五星级'
+                        name: '五年级'
                     }
                 ]
             }
@@ -136,7 +134,7 @@ const state = reactive({
 const state1 = reactive({
     options: {
         title: {
-            text: '折线图示例'
+            text: '用户新增数量'
         },
         tooltip: {
             trigger: 'axis'

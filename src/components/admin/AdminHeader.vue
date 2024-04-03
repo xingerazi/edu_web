@@ -1,4 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from 'vue-router';
+import { useUserStore } from '@/stores/index'
+const router = useRouter()
+const userStore = useUserStore()
+const exitlogin=()=>{
+  userStore.deleteAll()
+  router.push('/')
+}
+</script>
 
 <template>
   <div class="header">
@@ -13,12 +22,12 @@
     <div class="r-content">
       <el-dropdown>
         <span class="el-dropdown-link">
-          <img src="@/assets/images/ava_img.png" class="user" />
+          <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" class="user" />
         </span>
         <template #dropdown>
           <el-dropdown-menu>
             <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>退出</el-dropdown-item>
+            <el-dropdown-item @click="exitlogin">退出</el-dropdown-item>
           </el-dropdown-menu>
         </template>
       </el-dropdown>

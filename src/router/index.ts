@@ -56,7 +56,7 @@ const router = createRouter({
         {
           path: 'chatai',
           name: 'chatai',
-          component: async () => await import('@/views/user/TeacherPage.vue'),
+          component: async () => await import('@/views/user/ChatAi.vue'),
         },
         {
           path: 'admin',
@@ -78,6 +78,11 @@ const router = createRouter({
               path: 'coursemanage',
               name: 'coursemanage',
               component: async () => await import('@/components/admin/AdminCoursemanage.vue')
+            },
+            {
+              path: 'othermanage',
+              name: 'othermanage',
+              component: async () => await import('@/components/admin/AdminOtherInfo.vue')
             }
           ]
         },
