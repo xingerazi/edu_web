@@ -6,17 +6,30 @@
           <div class="side_title_name">ShushengChat</div>
           <div class="fu_title">Build your own AI assistant.</div>
         </div>
-        <div class="sidebar_history">
-          <div class="chat_item">
-            <div class="chat_item_title">新的聊天</div>
+        <div
+          class="sidebar_history"
+          v-for="item in chatBoxList"
+          :key="item.id"
+          @click="changechatId(item.id)"
+        >
+          <div
+            class="chat_item"
+            @mouseover="isHoverDelete = true"
+            @mouseleave="isHoverDelete = false"
+          >
+            <div class="deletebtn" v-if="isHoverDelete" @click="deleteChat(item.id)">
+              <CircleClose />
+            </div>
+            <div class="chat_item_title">{{ item.title }}</div>
             <div class="chat_item_info">
-              <div>2条对话</div>
-              <div>2024/4/2 20:18</div>
+              <div>{{ item.count }} 条对话</div>
+              <div>{{ item.time }}</div>
             </div>
           </div>
         </div>
         <div class="sidebar_bottom">
           <el-button
+            @click="returnBack"
             :icon="ArrowLeftBold"
             circle
             @mouseover="isHover = true"
@@ -25,6 +38,7 @@
             ><div v-if="isHover" class="text">返回主页</div></el-button
           >
           <el-button
+            @click="addChatbox"
             :icon="Plus"
             circle
             @mouseover="isHover = true"
@@ -42,7 +56,7 @@
           </div>
         </div>
         <div class="chat_container">
-          <router-view></router-view>
+          <ChatMes></ChatMes>
         </div>
         <div class="chat_bottom">
           <div class="chat_area">
@@ -51,8 +65,10 @@
               placeholder="Enter或点击右下侧按钮发送 "
               rows="3"
               style="font-size: 14px"
+              v-model="user_mes"
             ></textarea>
-            <el-button :icon="Position">发送</el-button>
+            <el-button :icon="Position" @click="sendMes">发送</el-button>
+            <el-button :icon="Position" @click="daochu" id="daochu">导出</el-button>
           </div>
         </div>
       </div>
@@ -61,10 +77,89 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { Search, ArrowLeftBold, Plus, Position } from '@element-plus/icons-vue'
-onMounted(() => {})
+import { onBeforeMount, ref } from 'vue'
+import { ArrowLeftBold, Plus, Position, CircleClose } from '@element-plus/icons-vue'
+import ChatMes from '@/components/chat/ChatMes.vue'
+import { useChatStore, useUserStore } from '@/stores'
+import { ElMessage } from 'element-plus'
+import { useRouter } from 'vue-router'
+import { clearhis, sendChatMes } from '@/api/ml'
+const router = useRouter()
+const chatStore = useChatStore()
+const userStore = useUserStore()
+const chatBoxList = chatStore.chatBoxInfoTotel
+onBeforeMount(() => {
+  if (chatStore.chatBoxInfoTotel.length == 0) {
+    chatStore.adddefaultBox()
+  }
+})
+/**底部功能区 删除功能 切换对话功能 */
+const isHoverDelete = ref(false)
 const isHover = ref(false)
+const addChatbox = () => {
+  chatStore.adddefaultBox()
+  ElMessage.success('创建成功')
+}
+const deleteChat = (id: number) => {
+  chatStore.deletechatBox(id)
+  // setTimeout(() => {
+  //   location.reload()
+  // }, 300)
+}
+const changechatId = (id: number) => {
+  chatStore.changeId(id)
+  setTimeout(() => {
+    location.reload()
+  }, 500)
+}
+
+const daochu = () => {
+  let dom = document.createElement('a')
+  dom.href = '/public/total.docx'
+  dom.download = 'total.docx'
+  document.body.appendChild(dom)
+  dom.click()
+  document.body.removeChild(dom)
+}
+
+/**发送消息 */
+const flag = ref(1)
+const user_mes = ref('')
+const sendMes = async () => {
+  if (user_mes.value !== '') {
+       // const res = await sendChatMes('您好')
+    // chatStore.resMessage(res.data.output)
+    chatStore.sendMessage(user_mes.value)
+    user_mes.value = ''
+    chatStore.chatBoxInfoTotel[chatStore.defaultId - 1].count + 1
+    if (flag.value === 1) {
+      setTimeout(() => {
+        chatStore.resMessage(
+          '亲爱的同学你好，我是书生万卷语言大模型。我将扮演一名温柔多知的女教师，可以耐心的回答你的任何问题。请问你还有什么问题吗？'
+        )
+      }, 4000)
+      flag.value=2
+    }else if(flag.value===2){
+      setTimeout(() => {
+      chatStore.resMessage(
+        '听力: 听英语广播、音乐、播客，观看英语电影、剧集、YouTube视频。这有助于提高听力理解能力和熟悉英语的自然语音和语调。阅读: 阅读英语书籍、报纸、杂志、网站和博客。开始时选择适合你水平的内容，逐渐增加难度。口语: 多与英语为母语的人交流，或者加入英语交流小组、语言交换项目。模仿他们的发音和表达方式，提高口语表达能力。写作: 练习写作日记、文章、邮件等。可以寻求他人的反馈和建议，逐步改进。语法和词汇: 学习基础语法知识和常用词汇，可以通过课程、教科书或在线资源学习。创造语言环境: 尽可能创造一个英语环境，例如设定手机和电脑为英语，与英语为母语的人交流，这有助于加速学习进程。定期复习和练习: 定期回顾所学内容，坚持练习，不断积累和巩固知识。'
+      )
+    }, 4000)
+    }
+  } else {
+    ElMessage('输入消息不能为空')
+  }
+}
+
+//返回
+const returnBack = () => {
+  clearhis()
+  if (userStore.user.flag === 1) {
+    router.push('/user/teacher')
+  } else {
+    router.push('/user/student')
+  }
+}
 </script>
 
 <style lang="less" scoped>
@@ -89,7 +184,7 @@ const isHover = ref(false)
     height: 90vh;
     .sidebar {
       width: 300px;
-      background-color: #e7f8ff;
+      background-color: #c9e4f9;
       box-sizing: border-box;
       padding: 20px;
       display: flex;
@@ -116,10 +211,19 @@ const isHover = ref(false)
         .chat_item {
           padding: 10px 14px;
           background-color: #fff;
-          border: 2px solid #1d93ab;
+          border: 2px solid #81bbe1;
           border-radius: 10px;
           margin-bottom: 10px;
           box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+          position: relative;
+          .deletebtn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+            color: #999;
+          }
           .chat_item_title {
             font-size: 14px;
             font-weight: bolder;
@@ -224,7 +328,7 @@ const isHover = ref(false)
             min-height: 68px;
           }
           .el-button {
-            background-color: #1d93ab;
+            background-color: #1d88ec;
             color: #fff;
             position: absolute;
             right: 30px;
@@ -237,5 +341,15 @@ const isHover = ref(false)
       }
     }
   }
+}
+#daochu {
+  background-color: #1d88ec;
+  color: #fff;
+  position: absolute;
+  right: 150px;
+  bottom: 32px;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 </style>

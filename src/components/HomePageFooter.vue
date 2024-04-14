@@ -4,7 +4,7 @@
     <div class="footer">
     <div class="footer-content-column">
       <logo :is-transparent="true"></logo>
-      <p class="title">© 2023 书生·万卷</p>
+      <p class="title">© 2024 书生·万卷</p>
     </div>
     <div class="footer-content-column">
       <div class="title">联系我们</div>
@@ -109,95 +109,7 @@
             </g>
           </svg>
         </li>
-        <li class="contact-item toutiao">
-          <svg width="33" height="32">
-            <defs>
-              <path id="icon-toutiao_svg__a" d="M0 0h1440v251H0z" />
-              <circle id="icon-toutiao_svg__b" cx="16" cy="16" r="16" />
-              <filter
-                id="icon-toutiao_svg__c"
-                width="428.1%"
-                height="428.1%"
-                x="-164.1%"
-                y="-164.1%"
-                filterUnits="objectBoundingBox"
-              >
-                <feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-                <feGaussianBlur
-                  in="shadowOffsetOuter1"
-                  result="shadowBlurOuter1"
-                  stdDeviation="12.5"
-                />
-                <feColorMatrix
-                  in="shadowBlurOuter1"
-                  result="shadowMatrixOuter1"
-                  values="0 0 0 0 0.121568627 0 0 0 0 0.137254902 0 0 0 0 0.160784314 0 0 0 0.1 0"
-                />
-                <feMerge>
-                  <feMergeNode in="shadowMatrixOuter1" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-              <path id="icon-toutiao_svg__e" d="M0 0h32v32H0z" />
-            </defs>
-            <g fill="none" fill-rule="evenodd">
-              <path fill="#FFF" d="M-1229-7901H211V126h-1440z" />
-              <use
-                fill="#1F2329"
-                fill-rule="nonzero"
-                transform="translate(-1229 -125)"
-                xlink:href="#icon-toutiao_svg__a"
-              />
-              <g transform="translate(.5)">
-                <mask id="icon-toutiao_svg__d" fill="#fff">
-                  <use xlink:href="#icon-toutiao_svg__b" />
-                </mask>
-                <use fill="#FFF" xlink:href="#icon-toutiao_svg__b" />
-                <g filter="url(#icon-toutiao_svg__c)" mask="url(#icon-toutiao_svg__d)">
-                  <mask id="icon-toutiao_svg__f" fill="#fff">
-                    <use xlink:href="#icon-toutiao_svg__e" />
-                  </mask>
-                  <path
-                    fill="#FFF"
-                    d="M26.308 32H5.692A5.699 5.699 0 0 1 0 26.307V5.692A5.699 5.699 0 0 1 5.692 0h20.616A5.698 5.698 0 0 1 32 5.692v20.615A5.699 5.699 0 0 1 26.308 32"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#DDD"
-                    d="M5.692.241A5.457 5.457 0 0 0 .24 5.691v20.616a5.457 5.457 0 0 0 5.452 5.451h20.616a5.457 5.457 0 0 0 5.452-5.45V5.691A5.457 5.457 0 0 0 26.308.24H5.692zM26.308 32H5.692A5.699 5.699 0 0 1 0 26.307V5.692A5.698 5.698 0 0 1 5.692 0h20.616A5.698 5.698 0 0 1 32 5.692v20.615A5.699 5.699 0 0 1 26.308 32z"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#FF373C"
-                    d="M32 25.297L0 27V7.703L32 6z"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#FFF"
-                    d="M9 13v-1.66L5 11v1.66zm-4 1v1.66L9 16v-1.66zm10 4.457L3 19v-1.457L15 17zm14-1L17 18v-1.457L29 16zm-1-6.883L19 11V9.426L28 9z"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#FFF"
-                    d="M12 9l-1.861.105c-.05 3.999-.1 6.251-.768 7.863-.678 1.635-2.123 2.989-5.001 5.686L4 23l2.932-.165C11.71 18.28 11.896 17.29 12 9m1.218 11L11 20.121 12.782 23 15 22.879zm14-1L25 19.121 26.782 22 29 21.879zM21 19l-2.218.114L17 22l2.218-.114zm3 2.89L22 22v-6.89l2-.11zm2.138-12.798v1.18c-1.179.953-3.558 2.569-10.138 3.934V16c7.992-1.62 10.718-3.9 12-5.044V9l-1.862.092z"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#FFF"
-                    d="M18.917 11.162a16.953 16.953 0 0 0-.245-.162L17 12.059s.746.524.827.578C19.194 13.55 21.69 15.214 29 16v-1.793c-6.64-.748-8.859-2.228-10.083-3.045"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                  <path
-                    fill="#FFF"
-                    d="M17 11.954L18.815 13 21 9.79 19.003 9z"
-                    mask="url(#icon-toutiao_svg__f)"
-                  />
-                </g>
-              </g>
-            </g>
-          </svg>
-        </li>
-        <li class="contact-item lingying">
+        <!-- <li class="contact-item lingying">
           <svg width="33" height="32">
             <defs>
               <path id="icon-linkedin_svg__a" d="M0 0h1440v251H0z" />
@@ -218,7 +130,7 @@
               />
             </g>
           </svg>
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
@@ -255,7 +167,7 @@
     &__contact {
       margin-top: 20px;
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       .contact-item {
         border-radius: 50%;
         width: 33px;

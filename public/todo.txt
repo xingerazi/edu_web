@@ -1,0 +1,67 @@
+一，知识图谱
+1.多模态知识图谱 通识课 高校通用 知识广度深度 voice多模态
+2.怎样的多模态知识图谱 如何建立 一到多
+3.输入到输出 具备教学到答疑
+4.首先，其次，再次，最后
+二，
+1.针对多种开源大语言模型开展功能、性能评测和训练，选取基础大语言模型，利用构建的多模态课程知识图谱中知识作为测试集，对选取的大模型生成能力进行微调和纠偏，降低回答错误率。
+2.数据+知识双驱动    的引擎，融合做出自己的垂直模型
+3.包含功能：回答，降低错误率
+4.首先，其次，再次，最后
+三，服务：虚拟数字人
+1.做哪些服务：自适应教学/学习、智能答疑和智能分析，题目练习
+四，系统功能模块化
+1.一级二级三级四级
+2.系统同样
+3.需求分析（ 用例图 活动图）
+4.系统设计与实现 （架构设计 层次结构设计 功能结构设计 数据库设计（表） 关键算法设计 （提出（类） 
+5.详细设计与实现 每个具体设计（流程图 时序图 
+五，测试
+1.算法 功能测试
+<template>
+  <div class="editor">
+    <textarea class="input" :value="input" @input="update"></textarea>
+    <div class="output" v-html="output"></div>
+  </div>
+</template>
+<script setup>
+import { marked } from 'marked'
+import { ref, computed } from 'vue'
+const input = ref('"亲爱的同学，你好！有什么我可以帮到你的吗？是不是遇到了什么难题需要我们一起解决呢？别着急，无论是哪个学科、哪种类型的题目，只要你告诉我具体的内容，或是把你目前的困惑告诉我，我都会尽我最大的耐心和细致来帮助你理解和掌握。\n\n你可以试着这样描述你的问题：\n\n1. **题目内容**：尽可能详细地复述或复制粘贴题目文字，包括已知条件、求解目标、图形（如果有的话）等所有相关信息。\n\n2. **困惑之处**：指出你在解题过程中感到困惑的具体点，比如某个概念不理解、某一步骤不清楚、对题目的整体思路把握不准等。\n\n3. **已尝试的方法**：分享你目前已经做过的一些尝试，即使你觉得这些尝试可能不太对，它们也能帮助我了解你的思考过程，从而给出更适合你的指导。\n\n请你相信，每一个问题都有其解决之道，关键在于我们如何理性分析、逐步拆解，并运用已学知识去应对。学习的过程中难免会遇到困难，但每一次克服困难都是一次成长的契机。让我们共同面对这个挑战，我相信你一定能够顺利解决这个问题的。所以，请放心提问吧，我会一直在这里支持你，陪伴你解决问题。期待听到你的反馈，我们一起来战胜这道难题吧！"')
+const output = computed(() => marked(input.value))
+const output2 = marked.parse(input.value)
+const update = (e)=>{
+  input.value=e.target.value
+}
+</script>
+<style>
+body {
+  margin: 0;
+}
+.editor {
+  height: 100vh;
+  display: flex;
+}
+.input,
+.output {
+  overflow: auto;
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.input {
+  border: none;
+  border-right: 1px solid #ccc;
+  resize: none;
+  outline: none;
+  background-color: #f6f6f6;
+  font-size: 14px;
+  font-family: 'Monaco', courier, monospace;
+  padding: 20px;
+}
+code {
+  color: #f66;
+}
+</style>
+

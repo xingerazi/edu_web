@@ -42,7 +42,7 @@ const router=useRouter()
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
     .bg {
-      background: url("../../assets/images/loginlogo.JPG") no-repeat 100% center;
+      background: url("../../assets/images/class/coursebanner4.jpg") no-repeat 100% center;
       background-size: cover;
       height: 100%;
     }

@@ -1,15 +1,15 @@
-<script setup lang='ts'>
-import HomePageFooter from '@/components/HomePageFooter.vue';
-import { useRouter } from 'vue-router';
+<script setup lang="ts">
+import HomePageFooter from '@/components/HomePageFooter.vue'
+import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores/index'
-import { onMounted, ref } from 'vue';
-import { getImg } from '@/api/info';
+import { onMounted, ref } from 'vue'
+import { getImg } from '@/api/info'
 const router = useRouter()
 const userStore = useUserStore()
 const imgCode = ref('')
 
 //退出登录
-const exitlogin=()=>{
+const exitlogin = () => {
   userStore.deleteAll()
   router.push('/')
 }
@@ -20,26 +20,30 @@ onMounted(async () => {
 })
 </script>
 
-
 <template>
-  <el-affix :offset="100" style="height: 0;">
-    <el-button style="margin-left: 50px;" @click="exitlogin">退出登录</el-button>
+  <el-affix :offset="100" style="height: 0">
+    <el-button style="margin-left: 50px" @click="exitlogin">退出登录</el-button>
   </el-affix>
   <div class="stu_page">
     <div class="stu_page_navbar">
-      <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" style="width: 100%;">
+      <el-menu class="el-menu-demo" mode="horizontal" :ellipsis="false" style="width: 100%">
       </el-menu>
     </div>
     <div class="stu_page_maincontainer">
       <el-card class="stu_main_info_card" shadow="hover">
         <div class="stu_main_info">
           <div class="stu_main_info_img">
-            <el-avatar :size="120" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
-              v-if="!Boolean(imgCode)" />
+            <el-avatar
+              :size="120"
+              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+              v-if="!Boolean(imgCode)"
+            />
             <el-avatar :size="120" :src="imgCode" v-else />
             <div class="stu_main_info_intro">
               <h2>{{ userStore.user.name }}</h2>
-              <el-text class="mx-1" type="info">{{ userStore.user.flag == 1 ? '教师' : '学生' }}</el-text>
+              <el-text class="mx-1" type="info">{{
+                userStore.user.flag == 1 ? '教师' : '学生'
+              }}</el-text>
             </div>
           </div>
           <div class="stu_page_time">
@@ -57,15 +61,26 @@ onMounted(async () => {
           </div>
         </div>
       </el-card>
-      <el-card class="stu_page_func" style="margin-top: 20px;">
+      <el-card class="stu_page_func" style="margin-top: 20px">
         <div>
           <div class="selector">
-            <el-menu default-active="/user/myself" class="el-menu-demo" mode="horizontal" @select=""
-              text-color="	#696969" active-text-color="#00A3DB" router>
-              <el-menu-item index="/teacher/myself" style="font-size: 18px;">我的空间</el-menu-item>
-              <el-menu-item index="/teacher/visteacher" style="font-size: 18px;">智能批改</el-menu-item>
-              <el-menu-item index="/user/teacher/sportscoring" style="font-size: 18px;">体育评分</el-menu-item>
-              <el-menu-item index="/user/chatai" style="font-size: 18px;">智能问答</el-menu-item>
+            <el-menu
+              default-active="/user/teacher/center"
+              class="el-menu-demo"
+              mode="horizontal"
+              @select=""
+              text-color="	#696969"
+              s
+              active-text-color="#00A3DB"
+              router
+            >
+              <el-menu-item index="/user/teacher/center" style="font-size: 18px"
+                >我的空间</el-menu-item
+              >
+              <el-menu-item index="/user/teacher/sportscoring" style="font-size: 18px"
+                >体育评分</el-menu-item
+              >
+              <el-menu-item index="/user/assistant" style="font-size: 18px">智能问答</el-menu-item>
             </el-menu>
           </div>
           <router-view></router-view>
@@ -101,7 +116,7 @@ onMounted(async () => {
           .stu_page_time_box {
             margin-right: 20px;
             padding-right: 20px;
-            border-right: 1px solid #D3D3D3;
+            border-right: 1px solid #d3d3d3;
           }
 
           .stu_page_time_title {
@@ -112,11 +127,12 @@ onMounted(async () => {
 
           .stu_page_time_cont {
             margin-top: 5px;
-            color: #A9A9A9;
+            color: #a9a9a9;
           }
         }
 
-        .stu_main_info_others {}
+        .stu_main_info_others {
+        }
 
         .stu_main_info_img {
           display: flex;

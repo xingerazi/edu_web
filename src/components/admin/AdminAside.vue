@@ -11,26 +11,26 @@
     >
       <el-menu-item index="/user/admin/main">
         <el-icon>
-          <location />
+          <House />
         </el-icon>
         <span>首页</span>
       </el-menu-item>
       <el-menu-item index="/user/admin/usermanage">
         <el-icon>
-          <location />
+          <Message />
         </el-icon>
         <span>用户管理</span>
       </el-menu-item>
       <el-menu-item index="/user/admin/coursemanage">
         <el-icon>
-          <location />
+          <DataAnalysis />
         </el-icon>
         <span>课程管理</span>
       </el-menu-item>
       <el-sub-menu index="/user/admin">
         <template #title>
           <el-icon>
-            <location />
+            <Box />
           </el-icon>
           <span>其他</span>
         </template>

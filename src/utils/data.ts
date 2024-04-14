@@ -176,7 +176,7 @@ export const data = {
   "staffStories": [
     {
       "id": 1,
-      "name": "熊典",
+      "name": "张明",
       "avatar": "https://sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/xiongdianavarta.png",
       "bannerImage": "//sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/xiongdianBanner.jpg",
       "remark": "“通过体育动作自动评价系统，帮助我们可以在体育教育上更加具有效率，并且也让学生清晰的了解到动作的不足。”",
@@ -186,7 +186,7 @@ export const data = {
     },
     {
       "id": 2,
-      "name": "王司羊",
+      "name": "王明",
       "avatar": "https://sf1-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/siyangAvata.png",
       "bannerImage": "//sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/story2_bg2x_1576834857930.jpg",
       "remark": "“作为一名新老师，它的智能推荐化计算机网络题库可以帮助我快速的备课以及出题，给我的教学之路扫平了许多障碍”  ",
@@ -196,7 +196,7 @@ export const data = {
     },
     {
       "id": 3,
-      "name": "左儒哲",
+      "name": "李明",
       "avatar": "https://sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/story3_avatar2x_1576834857749.jpg",
       "bannerImage": "//sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/story3_bg2x_1576834857917.jpg",
       "remark": "“比起其他网站，书生万卷可能更浪漫，这里不设边界，只要连接人与信息，人与教育的事情，都会尝试去做。” ",
@@ -204,5 +204,8 @@ export const data = {
       "department": "书生 万卷",
       "richContent": "<p style='-webkit-font-smoothing: antialiased; margin: 20px auto; padding: 0px; line-height: 2.14; color: rgb(81, 86, 93); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'>我是 Roger 左儒哲，一个土生土长的美国人。在哈佛毕业之后，我和许多美国技术人才一样，漂到西海岸的硅谷，在亚马逊、Facebook 这类大厂和初创公司间跳来跳去，大厂小厂都待过后，我发现硅谷变了，这里的技术水平仍然很好，但大公司却越来越趋于稳定保守，不想冒险做创新的事情。</p><img src='https://sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/story/story3_img12x_1577069327983.jpg' alt='' style='-webkit-font-smoothing: antialiased; vertical-align: middle; width: 720px; margin: 12px auto; color: rgb(31, 35, 41); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'><span style='color: rgb(31, 35, 41); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'></span><p style='-webkit-font-smoothing: antialiased; margin: 20px auto; padding: 0px; line-height: 2.14; color: rgb(81, 86, 93); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'>后来我发现，九千多公里外的北京，倒是更像早期的硅谷。移动支付、二维码、共享经济……中国的互联网世界出现了好多创新，北京很多方面的发展比硅谷还要快，于是我决定，一定要来这里看看。</p><p style='-webkit-font-smoothing: antialiased; margin: 20px auto; padding: 0px; line-height: 2.14; color: rgb(81, 86, 93); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'>其实早在 2016 年的时候我就知道字节跳动，那时候只知道今日头条、抖音，还有海外的一些应用，入职后才知道，我们产品的覆盖范围其实比想象中大很多。 现在我主要在做飞书这个产品的客户端，目前还处于创新、创建、探索的阶段，很多的系统还没那么成熟，但这是一个全新的机会，我可以完整参与到做出一个兼具创新性和实用性的产品的过程中去，同事们的技术能力很强。飞书把日历、文档、聊天都放在一个 App 内，这样的工作模型非常方便，未来也很有潜力，很多硅谷的科技公司，也没有一个这么完整的办公软件。飞书的海外版本 Lark 已经发布，我也会给美国的朋友主动推广我们的产品，他们对 Lark 的反馈也都很不错！</p><p style='-webkit-font-smoothing: antialiased; margin: 20px auto; padding: 0px; line-height: 2.14; color: rgb(81, 86, 93); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'>当然，工作有成就感的同时，我也面临一些挑战，公司的工作节奏很快，每个人需要同时做很多事情。目前我们每两周发布一个新版本，关于产品计划，需要提前思考，这两周要发布什么新功能，功能上线后我需要管理哪些新的功能，修复哪些 bug，如何管理自己的时间等等。</p><p style='-webkit-font-smoothing: antialiased; margin: 20px auto; padding: 0px; line-height: 2.14; color: rgb(81, 86, 93); font-family: Gilroy-regular, -apple-system, system-ui, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;'>工作下来我最大的感受是， 字节跳动有一个产品至上的概念，视用户为中心，所有的价值观和工作方法都在围绕这个概念展开。与此同时，这里的文化非常开放包容，没有太多的限制——我中文沟通还比较慢，但也可以来到北京和中国的同事一起工作。比起其他公司，字节跳动可能更浪漫，或者说，有更大的梦想。公司不设边界，只要连接人与信息的事情，我们都会尝试去做。</p>"
     }
+  ],
+  "tikuintro":[
+    {'title':'计算机网络'}
   ]
 }

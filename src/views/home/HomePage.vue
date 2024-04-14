@@ -47,14 +47,7 @@ console.log(log_info)
               <el-menu-item index="/login">登录</el-menu-item>
               <el-sub-menu index="2">
                 <template #title>更多信息</template>
-                <el-menu-item index="2-1">item one</el-menu-item>
-                <el-menu-item index="2-2">item two</el-menu-item>
-                <el-menu-item index="2-3">item three</el-menu-item>
-                <el-sub-menu index="2-4">
-                  <template #title>item four</template>
-                  <el-menu-item index="2-4-1">item one</el-menu-item>
-                  <el-menu-item index="2-4-2">item two</el-menu-item>
-                </el-sub-menu>
+                <el-menu-item index="2-1">暂无更多信息</el-menu-item>
               </el-sub-menu>
             </div>
           </el-menu>
@@ -85,27 +78,24 @@ console.log(log_info)
             <h1 class="byteLife-title"></h1>
             <div class="block-item block-item-one">
               <div class="block-item-column block-item-column-text">
-                <h2 class="block-item-column-title">在扁平开放的氛围 里工作</h2>
+                <h2 class="block-item-column-title">在博智逐新的环境里教学</h2>
                 <div class="content">
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">智能化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      利用大模型进行训练，更显智能，教师的贴心助手
                     </p>
                   </div>
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">学科化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      题库分类分层整理，提出问题回答问题速度更快 更有针对性
                     </p>
                   </div>
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">可视化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      ui简洁明了，便于查看
                     </p>
                   </div>
                 </div>
@@ -117,33 +107,30 @@ console.log(log_info)
             </div>
             <div class="block-item block-item-one">
               <div class="block-item-column block-item-column-text">
-                <h2 class="block-item-column-title">在扁平开放的氛围 里工作</h2>
+                <h2 class="block-item-column-title">在寓教于乐的氛围里学习</h2>
                 <div class="content">
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">多端化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      web端，移动端多端共链，助您随时随地想学就学
                     </p>
                   </div>
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">虚拟化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      虚拟教师寓教于乐，给予不一样的学习体验
                     </p>
                   </div>
                   <div class="content-item">
-                    <h2 class="content-item-title">务实扁平的工作氛围</h2>
+                    <h2 class="content-item-title">博学化</h2>
                     <p class="content-item-desc">
-                      不讲 title
-                      和层级，敢于授权新人，专注完成业务目标，没有领地意识
+                      基于大模型构建庞大知识库，海量问题均可解答
                     </p>
                   </div>
                 </div>
               </div>
               <div class="block-item-column block-item-column-image">
-                <img src="https://sf3-ttcdn-tos.pstatp.com/obj/ttfe/ATSX/mainland/life_1.png" />
+                <img src="../../assets/images/tongshi.jpg" />
               </div>
             </div>
           </div>
@@ -157,42 +144,42 @@ console.log(log_info)
                 <div class="func_stu_contain_main">
                   <div class="func_stu_contain_main_card">
                     <div class="func_stu_contain_main_card_img">
-                      <img src="../../assets/images/stu_func.png" alt="">
+                      <img src="../../assets/index/chat.png" alt="">
                     </div>
                   </div>
                   <div class="func_stu_contain_main_intro">
-                    <span>基于llm</span>
-                    <h6>相似的题库推荐</h6>
+                    <span>基于大模型</span>
+                    <h6>ai对话</h6>
                     <p>
-                      相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐,相似的题库推荐相似的题库推荐相似的题库推荐
+                      通过ai对话,我们希望能够帮助学生解除学习上的困惑，同时也希望能够寓教于乐，成为学生成长路上的一位良师益友
                     </p>
                   </div>
                 </div>
                 <div class="func_stu_contain_main">
                   <div class="func_stu_contain_main_card">
                     <div class="func_stu_contain_main_card_img">
-                      <img src="../../assets/images/stu_func.png" alt="">
+                      <img src="../../assets/index/course.png" alt="">
                     </div>
                   </div>
                   <div class="func_stu_contain_main_intro">
-                    <span>基于llm</span>
-                    <h6>相似的题库推荐</h6>
+                    <span>基于大模型</span>
+                    <h6>虚拟老师课程</h6>
                     <p>
-                      相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐,相似的题库推荐相似的题库推荐相似的题库推荐
+                     虚拟老师可以形象生动的为同学们讲解知识点,让学生的学习更加具有动力与助力
                     </p>
                   </div>
                 </div>
                 <div class="func_stu_contain_main">
                   <div class="func_stu_contain_main_card">
                     <div class="func_stu_contain_main_card_img">
-                      <img src="../../assets/images/stu_func.png" alt="">
+                      <img src="../../assets/index/grade.jpg" alt="">
                     </div>
                   </div>
                   <div class="func_stu_contain_main_intro">
-                    <span>基于llm</span>
-                    <h6>相似的题库推荐</h6>
+                    <span>基于大模型</span>
+                    <h6>学习成绩汇总</h6>
                     <p>
-                      相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐相似的题库推荐,相似的题库推荐相似的题库推荐相似的题库推荐
+                      通过汇总学生的学习成绩，可以更快的找出薄弱点与不足，帮助学生更好的成长与学习
                     </p>
                   </div>
                 </div>
@@ -201,7 +188,7 @@ console.log(log_info)
             <div class="func_tea">
               <div class="func_tea_intro">
                 <h1 class="func_tea_intro_title">教师的省心助手</h1>
-                <p class="func_tea_intro_main">我们通过进行功能的体验和生活，在教师端，来帮助教学和改卷</p>
+                <p class="func_tea_intro_main">我们在教师端增加小助教，评分系统，来帮助教学</p>
               </div>
               <ul class="staffStory-list clearfix">
                 <router-link tag="li" :to="`/`" v-for="item in staffStories" :key="item.id" class="staffStory-item">
@@ -215,7 +202,6 @@ console.log(log_info)
                     </div>
                     <p class="remark">{{ item.remark }}</p>
                   </div>
-                  <div class="circular-button">→</div>
                 </router-link>
               </ul>
             </div>
@@ -230,11 +216,12 @@ console.log(log_info)
       <div style="
         height: 100%;
         width: 100%;
-        background-color: var(--el-bg-color-overlay);
+        background-color: #fff;
         box-shadow: var(--el-box-shadow-lighter);
         text-align: center;
         line-height: 40px;
         color: #1989fa;
+        border-radius: 50%;
       ">
         UP
       </div>
@@ -536,12 +523,13 @@ console.log(log_info)
               }
 
               h6 {
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-weight: bold;
                 margin-bottom: 20px;
               }
 
               p {
+                font-size: 18px;
                 max-width: 400px;
               }
             }

@@ -1,3 +1,4 @@
+import type { CourseItemInfo } from "@/type/thing";
 import { defineStore } from "pinia";
 import { ref } from 'vue'
 
@@ -15,6 +16,18 @@ type User = {
 export const useUserStore = defineStore(
   'user',
   () => {
+    /**课程 */
+    const courseId=ref(0)
+    const courseItem=ref<CourseItemInfo>({
+      id: 1,
+      courseName: '',
+      instructor: '',
+      semester: '',
+      classroom: '',
+      daysOfWeek: '',
+      teacherId: 1
+    })
+    /**用户 */
     const token = ref('')
     const imgCode = ref('')
     const setToken = (newToken: string) => {
@@ -31,6 +44,9 @@ export const useUserStore = defineStore(
       phone: '',
       sex: 1,
     })
+    const setCourseinfo=(data:CourseItemInfo)=>{
+      courseItem.value=data
+    }
     const getUser = async (data: {
       image: string;
       phone: string;
@@ -60,8 +76,13 @@ export const useUserStore = defineStore(
         sex: 1,
       }
     }
+    const setCourse=(id:any)=>{
+      courseId.value=id
+    }
 
     return {
+      courseItem,
+      courseId,
       imgCode,
       token,
       user,
@@ -69,7 +90,9 @@ export const useUserStore = defineStore(
       removeToken,
       getUser,
       setUser,
-      deleteAll
+      deleteAll,
+      setCourse,
+      setCourseinfo
     }
   },
   {

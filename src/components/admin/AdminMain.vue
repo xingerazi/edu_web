@@ -10,8 +10,8 @@
                     </div>
                 </div>
                 <div class="login_info">
-                    <p>上次登录时间: <span>2022-7-11</span></p>
-                    <p>上次登录地点: <span>2022-7-11</span></p>
+                    <p>上次登录时间: <span>2024/4/8</span></p>
+                    <p>上次登录地点: <span>ip:四川</span></p>
                 </div>
             </el-card>
             <el-card shadow="hover" style="margin-top: 20px; height: 660px">
@@ -27,8 +27,8 @@
                 <el-card :body-style="{ display: 'flex', padding: 0 }" v-for="item in countData" :key="item.name">
                     <component :is="item.icon" class="icons" :style="{ background: item.color }"></component>
                     <div class="details">
-                        <p class="num">${{ item.value }}</p>
-                        <p class="txt">${{ item.name }}</p>
+                        <p class="num">{{ item.value }}</p>
+                        <p class="txt">{{ item.name }}</p>
                     </div>
                 </el-card>
             </div>
@@ -47,38 +47,38 @@ import { onMounted, reactive, ref } from 'vue'
 import * as echarts from 'echarts'
 const countData = ref([
     {
-        name: '课程上新',
-        value: 1234,
+        name: '新增用户',
+        value: 12,
         icon: 'CircleCheck',
         color: '#2ec7c9'
     },
     {
-        name: '课程上新',
-        value: 1234,
+        name: '新增老师',
+        value: 23,
         icon: 'Star',
         color: '#ffb980'
     },
     {
-        name: '课程上新',
-        value: 1234,
+        name: '新增学生',
+        value: 12,
         icon: 'Goods',
         color: '#5ab1ef'
     },
     {
         name: '课程上新',
-        value: 1234,
+        value: 11,
         icon: 'CircleCheck',
         color: '#2ec7c9'
     },
     {
-        name: '课程上新',
-        value: 1234,
+        name: '课程总量',
+        value: 34,
         icon: 'Star',
         color: '#ffb980'
     },
     {
-        name: '课程上新',
-        value: 1234,
+        name: '访问次数/人次',
+        value: 528,
         icon: 'Goods',
         color: '#5ab1ef'
     }
@@ -108,23 +108,23 @@ const state = reactive({
                 data: [
                     {
                         value: 1866,
-                        name: '一年级'
+                        name: '教师'
                     },
                     {
                         value: 1725,
-                        name: '二年级'
+                        name: '大学生'
                     },
                     {
                         value: 1535,
-                        name: '三年级'
+                        name: '初中生'
                     },
                     {
                         value: 1505,
-                        name: '四年级'
+                        name: '高中生'
                     },
                     {
                         value: 1414,
-                        name: '五年级'
+                        name: '其他'
                     }
                 ]
             }

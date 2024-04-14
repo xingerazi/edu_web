@@ -9,8 +9,6 @@ const userStore=useUserStore()
 const imgCode=ref('')
 onMounted(async()=>{
   const res = await getImg()
-  console.log(res);
-  
   imgCode.value = URL.createObjectURL (res.data) 
 })
 </script>
@@ -20,21 +18,6 @@ onMounted(async()=>{
   <div class="stu_page">
     <div class="stu_page_navbar">
       <el-menu :default-active="1" class="el-menu-demo" mode="horizontal" @select="">
-        <el-menu-item index="1">Processing Center</el-menu-item>
-        <el-sub-menu index="2">
-          <template #title>Workspace</template>
-          <el-menu-item index="2-1">item one</el-menu-item>
-          <el-menu-item index="2-2">item two</el-menu-item>
-          <el-menu-item index="2-3">item three</el-menu-item>
-          <el-sub-menu index="2-4">
-            <template #title>item four</template>
-            <el-menu-item index="2-4-1">item one</el-menu-item>
-            <el-menu-item index="2-4-2">item two</el-menu-item>
-            <el-menu-item index="2-4-3">item three</el-menu-item>
-          </el-sub-menu>
-        </el-sub-menu>
-        <el-menu-item index="3" disabled>Info</el-menu-item>
-        <el-menu-item index="4">Orders</el-menu-item>
       </el-menu>
     </div>
     <div class="stu_page_maincontainer">
@@ -51,7 +34,7 @@ onMounted(async()=>{
           <div class="stu_page_time">
             <div class="stu_page_time_box">
               <p class="stu_page_time_title">打卡次数:</p>
-              <p class="stu_page_time_cont">26天</p>
+              <p class="stu_page_time_cont">1天</p>
             </div>
             <div>
               <p class="stu_page_time_title">教学所属:</p>
@@ -66,12 +49,11 @@ onMounted(async()=>{
       <el-card class="stu_page_func" style="margin-top: 20px;">
         <div>
           <div class="selector">
-            <el-menu default-active="/user/myself" class="el-menu-demo" mode="horizontal" @select=""
+            <el-menu default-active="/user/student/home" class="el-menu-demo" mode="horizontal" @select=""
               text-color="	#696969" active-text-color="#00A3DB" router>
-              <el-menu-item index="/student/course" style="font-size: 18px;">我的空间</el-menu-item>
+              <el-menu-item index="/user/student/home" style="font-size: 18px;">我的空间</el-menu-item>
               <el-menu-item index="/user/student/course" style="font-size: 18px;">虚拟课程</el-menu-item>
-              <el-menu-item index="/user/teacher/sportscoring" style="font-size: 18px;">体育评分</el-menu-item>
-              <el-menu-item index="/user/test2" style="font-size: 18px;">智能问答</el-menu-item>
+              <el-menu-item index="/user/chatai" style="font-size: 18px;">智能问答</el-menu-item>
             </el-menu>
           </div>
           <router-view></router-view>

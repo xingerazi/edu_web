@@ -6,7 +6,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'index',
       component: async () => await import('@/views/home/HomePage.vue')
     }, // 登录页
     {
@@ -28,10 +28,14 @@ const router = createRouter({
       ]
     },
     {
-      path: "/user", name: 'userpage', component: async () => await import('@/views/user/UserPage.vue'), children: [
+      path: '/user',
+      name: 'userpage',
+      component: async () => await import('@/views/user/UserPage.vue'),
+      children: [
         {
           path: 'student',
           name: 'student',
+          redirect: '/user/student/home',
           component: async () => await import('@/views/user/StudentPage.vue'),
           children: [
             {
@@ -39,24 +43,50 @@ const router = createRouter({
               name: 'course',
               component: async () => await import('@/components/student/CourseList.vue')
             },
+            {
+              path: 'home',
+              name: 'home',
+              component: async () => await import('@/components/student/StudentCenter.vue')
+            }
           ]
         },
         {
           path: 'teacher',
           name: 'teacher',
           component: async () => await import('@/views/user/TeacherPage.vue'),
+          redirect: '/user/teacher/center',
           children: [
             {
               path: 'sportscoring',
               name: 'sportscoring',
               component: async () => await import('@/components/teacher/SportScoring.vue')
             },
+            {
+              path: 'center',
+              name: 'center',
+              component: async () => await import('@/components/teacher/TeacherCenter.vue')
+            }
           ]
         },
         {
           path: 'chatai',
           name: 'chatai',
-          component: async () => await import('@/views/user/ChatAi.vue'),
+          component: async () => await import('@/views/user/ChatAi.vue')
+        },
+        {
+          path: 'assistant',
+          name: 'assistant',
+          component: async () => await import('@/views/user/Assistant.vue')
+        },
+        {
+          path: 'coursevideo',
+          name: 'coursevideo',
+          component: async () => await import('@/views/course/courseVideo.vue')
+        },
+        {
+          path: 'aiassis',
+          name: 'aiassis',
+          component: async () => await import('@/views/user/ChatAssistant.vue')
         },
         {
           path: 'admin',
@@ -94,7 +124,11 @@ const router = createRouter({
       ]
     },
 
-    { path: "/:notFound(.*)", name: 'not-found', component: async () => await import('@/views/notFound/NotFound.vue') },
+    {
+      path: '/:notFound(.*)',
+      name: 'not-found',
+      component: async () => await import('@/views/notFound/NotFound.vue')
+    }
   ]
 })
 
